@@ -93,5 +93,6 @@ w domu, zrob ten co przeliczyl srodkowa z min i max (a+b+c-min-max=srodek)
     }
 
 
+
     return 0;
 }
