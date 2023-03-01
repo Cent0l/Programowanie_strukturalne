@@ -16,9 +16,39 @@ double a;
     printf("przed chwila wczytalem liczbe a=%lf,a jej dwukrotnosc wynosi %lf",a,a*2);
     printf("przed chwila wczytalem liczbe a=%lf,a jej przyblizenie do 2 miejsc po przecinku wynosi %.2lf",a,a);
     printf("przed chwila wczytalem liczbe a=%lf,a jej odwrotnosc wynosi %lf",a,1/a);
+    
     int a;
     scanf("%d",&a);
-    printf("przed chwila wczytalem liczbe a=%d,a jej odwrotnosc wynosi %f",a,1/(float)(a));/lub [...]1.0/a
+    printf("przed chwila wczytalem liczbe a=%d,a jej odwrotnosc wynosi %f",a,1/(float)(a));/lub [...]1.0/a tak jak ponizej
+    int a,x;
+    scanf("%d%d",&a,&x);
+    printf("srednia z tych liczb to %f",(a+x)/2.0);
+    scanf("%d",&x);
+    printf("pierwiastek z tych liczb to %f",sqrt(x));
+    printf("wartosc bezwzgledna to %f",fabs(x)); (  abs(x) to bezwzgledna, fabs dla rzeczywistych)
+    double x;
+    scanf("%lf",&x);
+    printf("notacja wykladnicza %e",x);
+    printf("pierwiastek %lf",pow(x,1.0/3));
     
+    
+    INSTRUKCJE WARUNKOWE 
+    
+    int x;
+    scanf("%d",&x);
+    if(x>=0)
+    
+    
+    {
+    printf("wartosc bezwzgledna to |%d|",x);
+    }
+    else
+    {
+    printf("wartosc bezwzgledna to |%d|",-1*x);
+    }
+    
+    if(x>0) printf("signum to %d",1);
+        else if (x<0) printf("signum to %d",-1);
+            else printf("signum to %d",0);
     return 0;
 }
