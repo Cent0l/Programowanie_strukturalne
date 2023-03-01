@@ -31,6 +31,12 @@ double a;
     printf("notacja wykladnicza %e",x);
     printf("pierwiastek %lf",pow(x,1.0/3));
     
+     int x,y,z;
+    scanf("%d%d%d",&x,&y,&z);
+    if((x>=y&&x<=z)||(x<=y&&x>=z)) printf("%d",x);
+        else if((y>=x&&y<=z)||(y<=x&&y>=z)) printf("%d",y);
+            else if((z>=x&&z<=y)||(z<=x&&z>=y)) printf("%d",z);
+    
     
     INSTRUKCJE WARUNKOWE 
     
@@ -50,5 +56,42 @@ double a;
     if(x>0) printf("signum to %d",1);
         else if (x<0) printf("signum to %d",-1);
             else printf("signum to %d",0);
+            
+    if(x>y) printf("max to %d",x);//ten mniej wyrazisty komentarz
+        else printf("max to %d",y);///a tu jaki widoczny
+/*
+a tu blok
+*/
+
+scanf("%d%d%d",&x,&y,&z);
+    int max2;
+    if(x>y) max2=x;
+        else max2=y;
+    if (max2>z) printf("max to %d",max2);
+        else printf("max to %d",z);
+
+w domu, zrob ten co przeliczyl srodkowa z min i max (a+b+c-min-max=srodek)
+
+    int a,h,b,c,kom;
+    scanf("%d",&kom);
+    //1=podaj a i h
+    //2=podaj a,b,c
+    if(kom==1)
+    {
+        printf("podaj a, oraz h\n");
+        scanf("%d%d",&a,&h);
+        float pole=0.5*a*h;
+        printf("%f",pole);
+    }
+ if(kom==2)
+    {
+        printf("podaj a,b,oraz c\n");
+        scanf("%d%d%d",&a,&b,&c);
+        float p=(a+b+c)/2;
+        float pole=sqrt(p*(p-a)*(p-b)*(p-c));
+        printf("%f",pole);
+    }
+
+
     return 0;
 }
