@@ -14,6 +14,11 @@ double a;
     scanf("%lf",&a);
     printf("w tym miejscu bedzie wypisana a=%lf, ale tu juz nie, za to tu a+1=%lf",a,a+1);
     printf("przed chwila wczytalem liczbe a=%lf,a jej dwukrotnosc wynosi %lf",a,a*2);
+    printf("przed chwila wczytalem liczbe a=%lf,a jej przyblizenie do 2 miejsc po przecinku wynosi %.2lf",a,a);
+    printf("przed chwila wczytalem liczbe a=%lf,a jej odwrotnosc wynosi %lf",a,1/a);
+    int a;
+    scanf("%d",&a);
+    printf("przed chwila wczytalem liczbe a=%d,a jej odwrotnosc wynosi %f",a,1/(float)(a));/lub [...]1.0/a
     
     return 0;
 }
