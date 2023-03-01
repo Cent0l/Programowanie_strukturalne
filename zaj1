@@ -1,0 +1,19 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    printf("Hello world \n");
+int a;
+    scanf("%d",&a);
+    printf("w tym miejscu bedzie wypisana a=%d, ale tu juz nie, za to tu a+1=%d",a,a+1);
+float a;
+    scanf("%f",&a);
+    printf("w tym miejscu bedzie wypisana a=%f, ale tu juz nie, za to tu a+1=%f",a,a+1);
+double a;
+    scanf("%lf",&a);
+    printf("w tym miejscu bedzie wypisana a=%lf, ale tu juz nie, za to tu a+1=%lf",a,a+1);
+    printf("przed chwila wczytalem liczbe a=%lf,a jej dwukrotnosc wynosi %lf",a,a*2);
+    
+    return 0;
+}
