@@ -138,10 +138,83 @@ for(int i=1;i*n<m;i++)
     printf("\t%d\n",i*n);
 }
 
-
+unsigned int n,m;
+scanf("%d%d",&n,&m);
+for(int i=1;i<=m;i++)
+{
+    printf("\t%d\n",i*n);
+}
 
    
-   
+//for(int i=1;i<m;i++)
+//{
+//    if(i*n>m&&i*n<k) printf("\t%d\n",i*n);
+//}
+//wersja lepsza
+for(int i=(m/n*n+n);i<k;i=i+n)
+{
+    printf("\t%d\n",i);
+}
+
+scanf("%d",&n);
+for(int i=2;i<=n;i++)
+{
+m=i*m;
+}
+printf("%d!=%d",n,m);
+
+unsigned int n,m=0;
+scanf("%d",&n);
+for(int i=1;i<=n;i++)
+{
+m=m+(i*i);
+}
+printf("1^2+2^2+3^2+...+%d^2=%d",n,m);
+
+unsigned int n=0,m=0,k=0;
+scanf("%d",&k);
+int i=1;
+while(m<k)
+{
+m=m+(i*i);
+i++;
+
+}
+printf("%d\n",i-2);
+
+unsigned int n,w=1;
+scanf("%d",&n);
+for(int i=2;i<=n;i=i+2)
+{
+w=w*i;
+}
+printf("%d",w);
+
+unsigned int n,w=1,a,b;
+scanf("%d",&n);
+a=1;
+b=1;
+for(int i=3;i<=n;i++)
+{
+w=a+b;
+a=b;
+b=w;
+}
+printf("fib[%d]=%d",n,w);
+
+unsigned int a,b,nwd;
+scanf("%d%d",&a,&b);
+int min;
+if(a>b) min=b;
+else min=a;
+for(int i=2;i<=min;i++)
+{
+if(a%i==0&&b%i==0) nwd=i;
+}
+printf("nwd=%d",nwd);
+
+zrob nwd algorytmem euklidesa
+
 
 
     return 0;
