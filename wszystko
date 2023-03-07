@@ -92,6 +92,56 @@ w domu, zrob ten co przeliczyl srodkowa z min i max (a+b+c-min-max=srodek)
         printf("%f",pole);
     }
 
+   scanf("%d%d%d%d%d%d",&a,&b,&c,&d,&e,&f);
+   printf("uklad rowan to\n%dx+%dy=%d\n",a,b,e);
+   printf("%dx+%dy=%d\n",c,d,f);
+   w=a*e-b*d;
+   wx=c*e-b*f;
+   wy=a*f-c*d;
+   x=(float)wx/w;
+   y=(float)wy/y;
+   if(w==0);
+   {
+        if(wx==0 && wy==0) printf("uklad tozsamosciowy");
+            else printf("uklad sprzeczny");
+   }
+   if(w!=0) printf("x=%f\ny=%f",x,y);
+   popraw, cos jest nie tak
+   
+      int a,b,c;
+   float delta,x1,x2;
+   scanf("%d%d%d",&a,&b,&c);
+   printf("twoje rownanie to %dx^2+%dx+%d=0\n",a,b,c);
+   delta=(b*b)-(4*a*c);
+   if(delta<0)
+   {
+   printf("brak rozwiazan rzeczywistych");
+   }
+   else if(delta==0)
+   {
+    x1=(-b)/(2*a);
+    printf("%f",x1);
+   }
+   else if(delta>0)
+   {
+   x1=(-b-sqrt(delta))/(2*a);
+   x2=(-b+sqrt(delta))/(2*a);
+   if(x1==x2)
+    printf("%f",x1);
+    else printf("%f\n%f",x1,x2);
+   }
+
+unsigned int n,m;
+scanf("%d%d",&n,&m);
+for(int i=1;i*n<m;i++)
+{
+    printf("\t%d\n",i*n);
+}
+
+
+
+   
+   
 
 
     return 0;
