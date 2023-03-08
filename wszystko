@@ -219,3 +219,80 @@ zrob nwd algorytmem euklidesa
 
     return 0;
 }
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int warbezwzg(int x)
+{
+    if (x>0) return x;
+    else return -x;
+}
+
+unsigned int silnia(int x)
+{
+    if(x==0) return 1;
+    return x*silnia(x-1);
+}
+
+unsigned petsilnia(int x)
+{
+    int wynik=1;
+    for(int i=1;i<=x;i++)
+        wynik=wynik*i;
+    return wynik;
+}
+
+unsigned int dwadon(int x)
+{
+    if(x==0) return 1;
+    if(x==1) return 2;
+    return 2*dwadon(x-1);
+}
+unsigned petdwadon(int x)
+{
+    int wynik=1;
+    for(int i=1;i<=x;i++)
+        wynik=wynik*2;
+    return wynik;
+}
+float dwadonminus(int x)
+{
+ if(x==0) return 1;
+ if(x>=0) return 2*dwadonminus(x-1);
+ if(x<0) return 1/dwadonminus(-x);
+}
+
+int podloga(int x)
+{
+int i;
+while(i*i<=x)
+{
+i++;
+}
+return i-1;
+}
+
+int sumapodlog(int x)
+{
+int wynik=0,i;
+for(i=1;i<=x;i++)
+    {
+    wynik=wynik+podloga(i);
+    }
+return wynik;
+}
+
+int main()
+{
+int n;
+scanf("%d",&n);
+printf("suma podlog z pierwiastkow do %d=%d\n",n,sumapodlog(n));
+printf("|%d|=%d\n",n,warbezwzg(n));
+printf("%d!=%d\n",n,silnia(n));
+printf("%d!=%d\n",n,petsilnia(n));
+printf("2^%d=%d\n",n,dwadon(n));
+printf("2^%d=%d\n",n,petdwadon(n));
+printf("2^%d=%f\n",-n,dwadonminus(-n));
+printf("podloga z pierwiastka z %d=%d\n",n,podloga(n));
+}
