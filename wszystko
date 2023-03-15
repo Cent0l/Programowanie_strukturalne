@@ -307,6 +307,15 @@ void zlicz()
 
 //wczytuje liczbe calkowita zwraca jaka swoja wartosc wypisuje wszystkie dotychczas zsumowane
 
+void zlicz()
+{
+    static int liczba=0;// nadaje startowe, natomiast nie podmienia
+    liczba++;
+    printf("Ta funkcja wywolana zostala %d razy\n",liczba);
+}
+
+//wczytuje liczbe calkowita zwraca jaka swoja wartosc wypisuje wszystkie dotychczas zsumowane
+
 int zsumuj(int liczba)
 {
     static int suma=0;
@@ -377,10 +386,29 @@ if (n==0) return 1;
 if (n==1) return 1;
 if (n==2) return 1;
 if(n%3==0) return ciag5(n-1)+ciag5(n-2);
-if(n%3==1) return ciag5(n-1)*5+4;
-if(n%3==2) return ciag5(n-1)+1;
+else if(n%3==1) return ciag5(n-1)*5+4;
+    else return ciag5(n-1)+1;
 }
 
+int fibbonachi2(int n, int x, int y)
+{
+if (n==0) return x;
+if (n==1) return y;
+return fibbonachi2(n-1,x,y)+fibbonachi2(n-2,x,y);
+}
+
+int ciag6(int n,int p)
+{
+if (n==0) return p;
+    if(ciag6(n-1,p)%2==0) return ciag6(n-1,p)/2;
+    else  return 3*ciag6(n-1,p)+1;
+}
+int funkcja(int n, int m)
+{
+    if(n==0) return m;
+    if(m==0) return n;
+    else return funkcja(n-1,m)+funkcja(n-1,m-1)+funkcja(n,m-1);
+}
 int main()
 {
 zlicz();
@@ -424,8 +452,20 @@ for(int i=0;i<15;i++)
     printf("%d \t",ciag5(i));
 }
 printf("\n");
-
-
+for(int i=0;i<15;i++)
+{
+    printf("%d \t",fibbonachi2(i,2,7));
+}
+printf("\n");
+int j=0;
+int x=3;
+do
+{
+    printf("%d \t",ciag6(j,x));
+    j++;
+}
+while(ciag6(j,x)>1);
+printf("\n");
+printf("%d\n",funkcja(100,100));
 
 }
-
