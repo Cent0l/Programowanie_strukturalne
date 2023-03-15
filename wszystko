@@ -296,3 +296,136 @@ printf("2^%d=%d\n",n,petdwadon(n));
 printf("2^%d=%f\n",-n,dwadonminus(-n));
 printf("podloga z pierwiastka z %d=%d\n",n,podloga(n));
 }
+#include <stdio.h>
+#include <stdlib.h>
+void zlicz()
+{
+    static int liczba=0;// nadaje startowe, natomiast nie podmienia
+    liczba++;
+    printf("Ta funkcja wywolana zostala %d razy\n",liczba);
+}
+
+//wczytuje liczbe calkowita zwraca jaka swoja wartosc wypisuje wszystkie dotychczas zsumowane
+
+int zsumuj(int liczba)
+{
+    static int suma=0;
+    suma+=liczba;
+    return suma;
+}
+int silnia(int n)
+{
+    if(n==0) return 1;
+        return n*silnia(n-1);
+}
+int ciag(int n)
+{
+if (n==0) return 1;
+return 2*ciag(n-1)+5;
+}
+int ciag2(int n)
+{
+if (n==0) return 1;
+if (n==1) return 1;
+return ciag2(n-1)+2*ciag2(n-2)+3;
+}
+int fibbonachi(unsigned int n)
+{
+if (n==0) return 1;
+if (n==1) return 1;
+return fibbonachi(n-1)+fibbonachi(n-2);
+}
+void ograniczenie()
+{
+int x;
+scanf("%d",&x);
+for(int i=0;fibbonachi(i)<x;i++)
+{
+    printf("%d \t",fibbonachi(i));
+}
+printf("\n");
+}
+int tribbonachi(unsigned int n)
+{
+if (n==0) return 1;
+if (n==1) return 1;
+if (n==2) return 1;
+return tribbonachi(n-1)+tribbonachi(n-2)+tribbonachi(n-3);
+}
+int ciag3(unsigned int n)
+{
+if (n==0) return 1;
+if (n==1) return 2;
+int suma=0;
+for(int i=0;i<n;i++)
+{
+    suma=suma+ciag3(i);
+}
+return suma;
+}
+int ciag4(unsigned int n)
+{
+if (n==0) return 1;
+if (n==1) return 1;
+if(n%2==0) return ciag4(n-1)+n;
+    else return ciag4(n-1)*n;
+}
+
+int ciag5(unsigned int n)
+{
+if (n==0) return 1;
+if (n==1) return 1;
+if (n==2) return 1;
+if(n%3==0) return ciag5(n-1)+ciag5(n-2);
+if(n%3==1) return ciag5(n-1)*5+4;
+if(n%3==2) return ciag5(n-1)+1;
+}
+
+int main()
+{
+zlicz();
+zlicz();
+zlicz();
+zlicz();
+printf("suma:%d\n",zsumuj(1));
+printf("suma:%d\n",zsumuj(2));
+printf("suma:%d\n",zsumuj(2));
+printf("suma:%d\n",zsumuj(8));
+printf("%d!=%d\n",5,silnia(5));
+printf("%d!=%d\n",8,silnia(8));
+for(int i=0;i<10;i++)
+{
+    printf("%d \t",ciag(i));
+}
+printf("\n");
+for(int i=0;i<15;i++)
+{
+    printf("%d \t",ciag2(i));
+}
+printf("\n");
+//ograniczenie();
+for(int i=0;i<15;i++)
+{
+    printf("%d \t",tribbonachi(i));
+}
+printf("\n");
+for(int i=0;i<15;i++)
+{
+    printf("%d \t",ciag3(i));
+}
+printf("\n");
+for(int i=0;i<15;i++)
+{
+    printf("%d \t",ciag4(i));
+}
+printf("\n");
+for(int i=0;i<15;i++)
+{
+    printf("%d \t",ciag5(i));
+}
+printf("\n");
+
+
+
+}
+
