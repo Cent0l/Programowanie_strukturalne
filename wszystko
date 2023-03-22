@@ -544,6 +544,10 @@ double f(int x)
 {
     return 3*x;
 }
+double g(double (*f)(int x),int n)
+{
+ return f(n);
+}
 int main()
 {
 int a=7,b=8,c=7;
@@ -576,5 +580,6 @@ printf("%d\n\n",s);
 przepstala(&st,&s);
 printf("%d\n",st);
 printf("%d\n",s);
+
 
 }
