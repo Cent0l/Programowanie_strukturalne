@@ -581,5 +581,208 @@ przepstala(&st,&s);
 printf("%d\n",st);
 printf("%d\n",s);
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdbool.h>
+#include <math.h>
+#include <stdbool.h>
+
+void def(unsigned int n, int * tab)
+{
+tab[0]=2,tab[1]=1,tab[2]=3,tab[3]=7;
+}
+void wypisz(unsigned int n, int * tab)
+{
+    for (int i=0;i<n;i++)
+        printf("%d\t",tab[i]);
+    printf("\n");
+}
+void zeruj(unsigned int n, int * tab)
+{
+    for(int i=0;i<n;i++)
+    {
+        tab[i]=0;
+    }
+}
+void indeksy(unsigned int n, int * tab)
+{
+    for(int i=0;i<n;i++)
+    {
+        tab[i]=i;
+    }
+}
+void podwoj(unsigned int n, int * tab)
+{
+    for(int i=0;i<n;i++)
+    {
+        tab[i]=2*tab[i];
+    }
+}
+void bezwzgledna(unsigned int n, int * tab)
+{
+    for(int i=0;i<n;i++)
+    {
+            tab[i]=abs(tab[i]);
+    }
+}
+
+int sumatab(unsigned int n, int * tab)
+{
+    int suma=tab[0];
+    for(int i=1;i<n;i++)
+    {
+     suma+=tab[i];
+    }
+return suma;
+}
+int sumakwtab(unsigned int n, int * tab)
+{
+    int suma=tab[0];
+    for(int i=1;i<n;i++)
+    {
+     suma+=tab[i]*tab[i];
+    }
+return suma;
+}
+float sredniatab(unsigned int n, int * tab)
+{
+  float suma=0;
+    for(int i=0;i<n;i++)
+    {
+     suma+=tab[i];
+    }
+    return suma/n ;
+}
+float sredniageotab(unsigned int n, int * tab)
+{
+    float sm=1;
+    for(int i=0;i<n;i++)
+    {
+     sm=sm*tab[i];
+    }
+    return pow(sm,1.0*1/n);
+}
+float sredniahartab(unsigned int n, int * tab)
+{
+    float sm=0;
+    for(int i=0;i<n;i++)
+    {
+     sm=sm+1.0/tab[i];
+    }
+    return n/sm;
+}
+void tru(unsigned int n, bool * tab)
+{
+    for(int i=2;i<n;i++)
+    {
+     tab[i]=true;
+    }
+
+}
+
+int sito(unsigned int n)
+{
+    bool tab[n];
+ for(int i=0;i<n;i++)
+ {
+   tab[i]=true;
+ }
+ int j,k;
+ for(j=2;j<n;j++)
+ {
+   if(tab[j])
+   {
+       for(k=2*j;k<n;k=k+j)
+       {
+        tab[k]=false;
+       }
+   }
+ }
+int last=0;
+int x=n;
+while(!tab[x-1])
+{
+x--;
+}
+return x-1;
+}
+
+int sitoile(unsigned int n)
+{
+    bool tab[n];
+ for(int i=0;i<n;i++)
+ {
+   tab[i]=true;
+ }
+ int j,k;
+ for(j=2;j<n;j++)
+ {
+   if(tab[j])
+   {
+       for(k=2*j;k<n;k=k+j)
+       {
+        tab[k]=false;
+       }
+   }
+ }
+int x=0;
+for(int i=2;i<n;i++)
+{
+if(tab[i]) x++;
+}
+return x;
+}
+
+void przepisz (int * tab1, int * tab2,int n)
+{
+    for(int i=0;i<n;i++)
+    {
+        tab2[i]=tab1[i];
+    }
+}
+
+void przepiszodw (int * tab1, int * tab2,int n)
+{
+    for(int i=0;i<n;i++)
+    {
+        tab2[i]=tab1[n-i-1];
+    }
+}
+int main()
+{
+int rozmiar=4;
+int tab[rozmiar];
+int tabbool[20]={1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20};
+int tab1[10]={1,2,3,4,5,6,7,8,9,10};
+int tab2[10]={11,12,13,14,15,16,17,18,19,20};
+def(rozmiar,tab);
+wypisz(rozmiar,tab);
+zeruj(rozmiar,tab);
+wypisz(rozmiar,tab);
+indeksy(rozmiar,tab);
+wypisz(rozmiar,tab);
+def(rozmiar,tab);
+podwoj(rozmiar,tab);
+wypisz(rozmiar,tab);
+bezwzgledna(rozmiar,tab);
+wypisz(rozmiar,tab);
+def(rozmiar,tab);
+wypisz(rozmiar,tab);
+printf("%d\n",sumatab(rozmiar,tab));
+printf("%f\n",sredniatab(rozmiar,tab));
+printf("%f\n",sredniageotab(rozmiar,tab));
+printf("%f\n",sredniahartab(rozmiar,tab));
+printf("%d\n",sito(100));
+printf("%d\n",sitoile(10000));
+wypisz(10,tab1);
+wypisz(10,tab2);
+przepisz(tab1,tab2,10);
+wypisz(10,tab1);
+wypisz(10,tab2);
+przepiszodw(tab1,tab2,10);
+wypisz(10,tab1);
+wypisz(10,tab2);
+
+}
 
 }
