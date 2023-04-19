@@ -85,6 +85,20 @@ void przepiszn(char*a,char*b,int n)
     }
     b[n]=0;
 }
+void sklej(char*a,char*b,char*c)
+{
+    int x=dlugosc(a);
+    int y=dlugosc(b);
+    for(int i=0;i<=x;i++)
+    {
+    c[i]=a[i];
+    }
+    for(int i=0;i<=y;i++)
+    {
+    c[i+x]=b[i];
+    }
+c[x+y]=0;
+}
 int main()
 {
 printf("%d\n",sizeof(wchar_t));
@@ -96,8 +110,9 @@ for (int i=0;i<=15;i++) //377
 }
 char  *napis="sam";
 char  *napisa="sama";
-char a[100]="testowy  ";
-char b[100]="drugi testowy";
+char a[100]="brzeczy";
+char b[100]="szczykiewicz";
+char c[40]="";
 printf("\n");
 printf(napis);
 //wyczysc(napis);
@@ -112,17 +127,14 @@ printf(a);
 printf("\t");
 printf(b);
 //przepisz(a,b);
-przepiszn(a,b,4);
+//przepiszn(a,b,4);
 printf("\n");
 printf(a);
 printf("\t");
 printf(b);
-
-
-
-
-
-
+sklej(a,b,c);
+printf("\n");
+printf(c);
 }
 
 
