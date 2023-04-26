@@ -50,7 +50,7 @@ void wczytaj(int **t,unsigned int n, unsigned int m)
     {
         for(j=0;j<m;j++)
         {
-                scanf("%d\t",t[i][j]);
+                scanf("%d",t[i][j]);
         }
     printf("\n");
     }
@@ -62,7 +62,7 @@ void wczytaj2(unsigned int n, unsigned int m,int t[][m])
     {
         for(j=0;j<m;j++)
         {
-                scanf("%d\t",t[i][j]);
+                scanf("%d",t[i][j]);
         }
     printf("\n");
     }
