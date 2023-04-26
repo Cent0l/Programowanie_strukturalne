@@ -159,8 +159,21 @@ for(dl=0;napis2[dl]!=0;dl++){}
     }
 }
 }
-
-
+#include <wchar.h> //!
+char* godzina(int godz, int min, int sek)
+{
+char *wynik=malloc(9*sizeof(char));
+sprintf(wynik,"%02d:%02d:%02d",godz,min,sek);
+return wynik;
+}
+char* duzebib(char*a )
+{
+for(int i=0;a[i]!=0;i++)
+    {
+    a[i]=towupper(a[i]);
+    }
+return a;
+}
 int main()
 {
 printf("%d\n",sizeof(wchar_t));
