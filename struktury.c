@@ -108,6 +108,26 @@ struct zespolone dodaj(struct zespolone z1, struct zespolone z2)
     suma.b=z1.b+z1.b;
     return suma;
 };
+struct zespolone iloczyn(struct zespolone z1, struct zespolone z2)
+{
+    struct zespolone iloczyn;
+    iloczyn.a=z1.a*z2.a-z1.b*z2.b;
+    iloczyn.b=z1.a*z2.b+z1.b*z2.a;
+    return iloczyn;
+}
+//zrob iloraz
+struct zespolone sprze(struct zespolone z1)
+{
+  struct zespolone sp;
+    sp.a=z1.a;
+    sp.b=-z1.b;
+  return sp;
+}
+void modul(struct zespolone z1)
+{
+    double x=sqrt((z1.a*z1.a)+(z1.b*z1.b));
+    printf("%f",x);
+}
 
 int main()
 {
@@ -148,13 +168,16 @@ printf("%f\n",odleglosc(p1,p2));
 printf("%f\n",minimum(tab,3));
 printf("\n");
 struct zespolone z1;
-z1.a=5;
-z1.b=8;
+z1.a=3;
+z1.b=4;
 struct zespolone z2;
 z2.a=2;
-z2.b=4;
+z2.b=1;
 wyswietl(z1);
 wyswietl(z2);
+wyswietl(iloczyn(z1,z2));
+printf("\n");
+modul(z1);
 
 return 0;
 
