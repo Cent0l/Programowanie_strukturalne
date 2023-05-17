@@ -129,6 +129,16 @@ void modul(struct zespolone z1)
     printf("%f",x);
 }
 
+union superint
+{
+    int i;
+    unsigned int u;
+};
+struct wieleint
+{
+    int i;
+    unsigned int u;
+};
 int main()
 {
 
@@ -178,6 +188,15 @@ wyswietl(z2);
 wyswietl(iloczyn(z1,z2));
 printf("\n");
 modul(z1);
+struct wieleint s;
+s.i=1;
+s.u=1;
+union superint ss;
+ss.i=1;
+ss.u=1;
+printf("%d\n",sizeof(s));
+printf("%d\n",sizeof(ss));
+
 
 return 0;
 
